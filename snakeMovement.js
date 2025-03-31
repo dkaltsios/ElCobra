@@ -29,3 +29,17 @@ export function preventSelfCollision(gameState, isMoveSafe) {
   
     return isMoveSafe;
 }
+
+//Todo3-Snake avoids collision with other snakes
+export function avoidCollisionsWithOtherSnakes(gameState, isMoveSafe) {
+  const myHead = gameState.you.head;
+  const otherSnakes = gameState.board.snakes;
+
+  otherSnakes.forEach((snake) => {
+    snake.body.forEach((segment) => {
+      // TODO - Check for a safe move
+    });
+  });
+
+  return isMoveSafe;
+}

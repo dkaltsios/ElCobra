@@ -37,7 +37,15 @@ export function avoidCollisionsWithOtherSnakes(gameState, isMoveSafe) {
 
   otherSnakes.forEach((snake) => {
     snake.body.forEach((segment) => {
-      // TODO - Check for a safe move
+      if (segment.x === myHead.x + 1 && segment.y === myHead.y) {
+        isMoveSafe.right = false;
+      } else if (segment.x === myHead.x - 1 && segment.y === myHead.y) {
+        isMoveSafe.left = false;
+      } else if (segment.y === myHead.y + 1 && segment.x === myHead.x) {
+        isMoveSafe.up = false;
+      } else if (segment.y === myHead.y - 1 && segment.x === myHead.x) {
+        isMoveSafe.down = false;
+      }
     });
   });
 

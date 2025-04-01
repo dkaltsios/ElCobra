@@ -15,7 +15,6 @@ import chalk from 'chalk';
 import { preventSelfCollision } from './snakeMovement.js';
 import { avoidWalls } from './snakeMovement.js';
 
-
 // info is called when you create your Battlesnake on play.battlesnake.com
 // and controls your Battlesnake's appearance
 // TIP: If you open your Battlesnake URL in a browser you should see this data

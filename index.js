@@ -78,7 +78,7 @@ function move(gameState) {
   isMoveSafe = preventSelfCollision(gameState, isMoveSafe);
 
   // TODO: Step 3 - Prevent your Battlesnake from colliding with other Battlesnakes
-  // opponents = gameState.board.snakes;
+  isMoveSafe = avoidCollisionsWithOtherSnakes(gameState, isMoveSafe);
 
   // Are there any safe moves left?
   const safeMoves = Object.keys(isMoveSafe).filter(key => isMoveSafe[key]);

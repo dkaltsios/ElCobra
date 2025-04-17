@@ -7,9 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [Unreleased] 
+## [Unreleased]
 
 ### Added
+
 - User story issue template (`.github/ISSUE_TEMPLATE/user-story-template.md`) .
 - Pull request template (`.github/pull_request_template.md`) for consistent pull request descriptions.
 - Task issue template (`.github/ISSUE_TEMPLATE/task-template.md`) for smaller development tasks.
@@ -22,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [0.1.0] - 2025-04-03
 
 ### Added
+
 - Initial project setup with Node.js and Express.
 - Battlesnake starter project files included as the project foundation.
 - Core server logic: `index.js`, `server.js`
@@ -29,11 +31,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Package management files: `package.json`, `package-lock.json`
 - Project icon: `generated-icon.png`
 - Collision avoidance logic for:
-  - Wall boundaries 
-  - Self-collision 
+  - Wall boundaries
+  - Self-collision
   - Other snake collision
 
 ### Changed
+
 - Customized the snake’s appearance via `/start` endpoint (color, head type, tail type).
 - Updated `README.md` with project description, setup instructions, and usage notes.
 

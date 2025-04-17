@@ -1,7 +1,7 @@
 ---
 name: Task Template
 about: A general task or to-do item
-title: "[Task] "
+title: '[Task] '
 labels: task
 assignees: ''
 ---

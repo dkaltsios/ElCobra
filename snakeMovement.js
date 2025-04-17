@@ -3,18 +3,32 @@ export function preventSelfCollision(gameState, isMoveSafe) {
   const myBody = gameState.you.body
   const myHead = gameState.you.body[0]
 
-  Object.keys(isMoveSafe).forEach((move) => {
+  for (const move of Object.keys(isMoveSafe)) {
     if (isMoveSafe[move]) {
       let nextHeadPosition = { x: myHead.x, y: myHead.y }
 
-      if (move === 'up') {
-        nextHeadPosition.y += 1
-      } else if (move === 'down') {
-        nextHeadPosition.y -= 1
-      } else if (move === 'left') {
-        nextHeadPosition.x -= 1
-      } else if (move === 'right') {
-        nextHeadPosition.x += 1
+      switch (move) {
+        case 'up': {
+          nextHeadPosition.y += 1
+
+          break
+        }
+        case 'down': {
+          nextHeadPosition.y -= 1
+
+          break
+        }
+        case 'left': {
+          nextHeadPosition.x -= 1
+
+          break
+        }
+        case 'right': {
+          nextHeadPosition.x += 1
+
+          break
+        }
+        // No default
       }
 
       // Exclude the neck (second body segment) from the collision check
@@ -30,7 +44,7 @@ export function preventSelfCollision(gameState, isMoveSafe) {
         isMoveSafe[move] = false
       }
     }
-  })
+  }
 
   return isMoveSafe
 }
@@ -53,8 +67,8 @@ export function avoidCollisionsWithOtherSnakes(gameState, isMoveSafe) {
   const myHead = gameState.you.head
   const otherSnakes = gameState.board.snakes
 
-  otherSnakes.forEach((snake) => {
-    snake.body.forEach((segment) => {
+  for (const snake of otherSnakes) {
+    for (const segment of snake.body) {
       if (segment.x === myHead.x + 1 && segment.y === myHead.y) {
         isMoveSafe.right = false
       } else if (segment.x === myHead.x - 1 && segment.y === myHead.y) {
@@ -64,8 +78,8 @@ export function avoidCollisionsWithOtherSnakes(gameState, isMoveSafe) {
       } else if (segment.y === myHead.y - 1 && segment.x === myHead.x) {
         isMoveSafe.down = false
       }
-    })
-  })
+    }
+  }
 
   return isMoveSafe
 }

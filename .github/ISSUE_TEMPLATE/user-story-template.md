@@ -1,7 +1,7 @@
 ---
 name: 📘 User Story
 about: Create a Scrum-style user story to define new features or functionality.
-title: "[User Story] "
+title: '[User Story] '
 labels: user-story
 assignees: ''
 ---

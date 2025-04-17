@@ -1,18 +1,18 @@
-import { defineConfig } from "eslint/config";
-import js from "@eslint/js";
-import globals from "globals";
+import { defineConfig } from 'eslint/config'
+import js from '@eslint/js'
+import globals from 'globals'
 
-import eslintComments from "eslint-plugin-eslint-comments";
-import unicorn from "eslint-plugin-unicorn";
-import sonarjs from "eslint-plugin-sonarjs";
-import prettier from "eslint-config-prettier";
+import eslintComments from 'eslint-plugin-eslint-comments'
+import unicorn from 'eslint-plugin-unicorn'
+import sonarjs from 'eslint-plugin-sonarjs'
+import prettier from 'eslint-config-prettier'
 
 export default defineConfig([
   {
-    files: ["**/*.{js,mjs,cjs}"],
+    files: ['**/*.{js,mjs,cjs}'],
     languageOptions: {
       ecmaVersion: 2021,
-      sourceType: "module",
+      sourceType: 'module',
       globals: {
         ...globals.browser,
         ...globals.node,
@@ -20,7 +20,7 @@ export default defineConfig([
     },
     plugins: {
       js,
-      "eslint-comments": eslintComments,
+      'eslint-comments': eslintComments,
       unicorn,
       sonarjs,
     },
@@ -29,17 +29,17 @@ export default defineConfig([
       ...eslintComments.configs.recommended.rules,
       ...unicorn.configs.recommended.rules,
       ...sonarjs.configs.recommended.rules,
-      "sonarjs/todo-tag": "off",
+      'sonarjs/todo-tag': 'off',
 
       // Your custom rules
-      "semi": ["error", "always"],
-      "quotes": [0, "double"],
+      semi: ['error', 'always'],
+      quotes: [0, 'double'],
 
       // Prettier compatibility: turn off conflicting formatting rules
-      "unicorn/string-content": "off",
-      "unicorn/filename-case": "off",
-      "unicorn/prevent-abbreviations": "off",
+      'unicorn/string-content': 'off',
+      'unicorn/filename-case': 'off',
+      'unicorn/prevent-abbreviations': 'off',
     },
   },
   prettier,
-]);
+])

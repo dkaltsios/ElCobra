@@ -33,12 +33,12 @@ function info() {
 }
 
 // start is called when your Battlesnake begins a game
-function start(gameState) {
+function start() {
   console.log('GAME START')
 }
 
 // end is called when your Battlesnake finishes a game
-function end(gameState) {
+function end() {
   console.log('GAME OVER\n')
 }
 
@@ -89,7 +89,7 @@ function move(gameState) {
 
   // Are there any safe moves left?
   const safeMoves = Object.keys(isMoveSafe).filter((key) => isMoveSafe[key])
-  if (safeMoves.length == 0) {
+  if (safeMoves.length === 0) {
     console.log(`MOVE ${gameState.turn}: No safe moves detected! Moving down`)
     return { move: 'down' }
   }
@@ -98,24 +98,25 @@ function move(gameState) {
   const nextMove = safeMoves[0]
 
   // Log the game state
-  console.log(printBoard(gameState.board))
-  console.log('The gamestate is: ', gameState)
+  printBoard(gameState.board)
+  console.log('The gamestate is:', gameState)
   console.log(`MOVE ${gameState.turn}: ${nextMove}`)
   return { move: nextMove }
 }
 function printBoard(g) {
   const board = g
   const printBoard = Array.from({ length: board.height }, () =>
-    Array(board.width).fill('.')
+    // eslint-disable-next-line unicorn/no-new-array
+    new Array(board.width).fill('.')
   )
-  board.food.forEach((food) => {
+  for (const food of board.food) {
     printBoard[food.y][food.x] = chalk.red('F')
-  })
-  board.snakes.forEach((snake) => {
-    snake.body.forEach((segment) => {
+  }
+  for (const snake of board.snakes) {
+    for (const segment of snake.body) {
       printBoard[segment.y][segment.x] = chalk.green('S')
-    })
-  })
+    }
+  }
   for (let row = board.height - 1; row >= 0; row--) {
     console.log(printBoard[row].join(' '))
   }

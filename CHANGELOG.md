@@ -17,6 +17,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Implemented Manhattan distance logic to prioritize the closest food.
 - Initial head-to-head collision logic to avoid unsafe contested moves.
 - Created a GitHub project board .
+- Set up `.editorconfig` with team-defined code style rules.
+- Installed and configured Prettier for consistent code formatting across the project.
+- Added `.prettierrc.json` for Prettier configuration and `.prettierignore` for excluding files from formatting.
+- ESLint configuration with recommended rule sets
+- Installed and integrated plugins:
+  - eslint-plugin-eslint-comments
+  - eslint-plugin-unicorn
+  - eslint-plugin-sonarjs
+  - eslint-config-prettier
+- Custom ESLint rules for consistency (e.g., enforcing semicolons)
+
+### Changed
+
+- Applied Prettier formatting across the entire codebase to ensure consistency.
+- Linted the entire codebase for style and code quality
+- Disabled conflicting rules to ensure compatibility with Prettier
 
 ---
 

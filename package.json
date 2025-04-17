@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node index.js",
+    "prettier:check":
+      "prettier --check 'styles/**/*.scss' 'scripts/**/*.{js,jsx,ts,tsx}'",
+    "prettier:fix": 
+      "prettier --write 'styles/**/*.scss' 'scripts/**/*.{js,jsx,ts,tsx}'"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +18,8 @@
   "dependencies": {
     "chalk": "^5.4.1",
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "prettier": "3.5.3"
   }
 }

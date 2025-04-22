@@ -1,73 +1,63 @@
-# 🐍 Battlesnake JavaScript Starter Project
+# 🐍 ElCobra – Battlesnake JavaScript Starter Project
 
-### An official Battlesnake template written in JavaScript. Get started at [play.battlesnake.com](https://play.battlesnake.com).
+An official Battlesnake written in JavaScript. Get started at [play.battlesnake.com](https://play.battlesnake.com).
 
 ![Battlesnake Logo](https://media.battlesnake.com/social/StarterSnakeGitHubRepos_JavaScript.png)
 
-This project is a great starting point for anyone wanting to program their first Battlesnake in JavaScript. It can be run locally or easily deployed to a cloud provider of your choosing.  
-See the [Battlesnake API Docs](https://docs.battlesnake.com/api) for more details.
+ElCobra is a Battlesnake project built with modern best practices including code linting, formatting, and cloud deployment using Railway.
 
 ## 🛠 Technologies Used
 
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
+- [Railway](https://railway.app/) for deployment
+- Code quality tools:
+  - [Prettier](https://prettier.io/) for automatic formatting
+  - [EditorConfig](https://editorconfig.org/) for consistent styling
+  - [ESLint](https://eslint.org/) with:
+    - `eslint-config-prettier`
+    - `eslint-plugin-sonarjs`
+    - `eslint-plugin-unicorn`
+    - `eslint-plugin-eslint-comments`
 
-## 📦 Prerequisites
+## 🚀 Deployment
 
-Make sure you have the following installed:
+This Battlesnake is deployed using [Railway](https://railway.app/). No local server setup is required.
 
-- [Node.js](https://nodejs.org/en/) (v14 or higher recommended)
-- npm (comes with Node.js)
+### 🔗 Live Endpoint
 
-## 📥 Clone This Repository
+After deployment, Railway provides a public URL for your Battlesnake. Use this URL when registering your snake on [play.battlesnake.com](https://play.battlesnake.com).
+
+### 🧭 Deploy Instructions
+
+1. Go to [Railway](https://railway.app/) and create a new project.
+2. Connect your GitHub repository (`dkaltsios/ElCobra`).
+3. Set the following:
+   - **Build Command:** `npm install`
+   - **Start Command:** `npm start`
+4. Deploy the project.
+5. Copy the generated public URL and use it on the Battlesnake website.
+
+## 🧹 Code Quality
+
+This project uses Prettier and ESLint to maintain clean and consistent code.
+
+### Format Code
 
 ```bash
-git clone https://github.com/yourusername/battlesnake-js.git
-cd battlesnake-js
+npx prettier --write .
 ```
 
-## 📦 Install Dependencies
+### Lint Code
 
 ```bash
-npm install
+npx eslint .
+
 ```
+📘 Next Steps
 
-## 🚀 Start the Server
+- Edit snakeMovement.js to customize your Battlesnake’s strategy.
+- Follow the Quickstart Guide to iterate and test your Battlesnake.
+- Battle it out in the arena!
 
-```bash
-npm start
-```
 
-## ✅ Verify It's Running
-
-Open your browser or use `curl` to check if your Battlesnake is responding:
-
-```bash
-curl http://localhost:3000/
-```
-
-You should see a JSON response like this:
-
-```json
-{
-  "apiversion": "1",
-  "author": "",
-  "color": "#888888",
-  "head": "default",
-  "tail": "default"
-}
-```
-
-## 🏃 Run Your Battlesnake
-
-> If you're using [Replit](https://replit.com/), these steps are for you:
-
-1. Click the green **"Run"** button to start your Battlesnake.
-2. Copy your `repl.co` URL.
-3. Use that URL to register your Battlesnake on [play.battlesnake.com](https://play.battlesnake.com).
-
-## 📘 Next Steps
-
-- Follow the [Quickstart Guide](https://docs.battlesnake.com/quickstart) to customize and improve your snake's behavior.
-- Experiment with different strategies.
-- Test against other Battlesnakes in the arena!

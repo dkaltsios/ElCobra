@@ -15,11 +15,11 @@ import chalk from 'chalk'
 // Collisions
 import { preventSelfCollision } from './snake/collisions/preventSelfCollision.js'
 import { avoidWalls } from './snake/collisions/avoidWalls.js'
-import { avoidCollisionsWithOtherSnakes } from './snake/collisions/avoidCollisionsWithOtherSnakes.js'
+import { avoidCollisionsWithOtherSnakes } from './snake/collisions/avoidCollisionWithOtherSnakes.js'
 import { avoidHeadToHead } from './snake/collisions/avoidHeadToHead.js'
 
 // Movement
-import { moveTowardClosestFood } from './snake/movement/moveTowardClosestFood.js'
+import { moveTowardClosestFood } from './snake/movement/moveTowardsClosestFood.js'
 
 // info is called when you create your Battlesnake on play.battlesnake.com and controls your Battlesnake's appearance
 function info() {

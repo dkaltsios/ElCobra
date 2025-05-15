@@ -13,13 +13,13 @@ import runServer from './server.js'
 import chalk from 'chalk'
 
 // Collisions
-import { preventSelfCollision } from './collisions/preventSelfCollision.js'
-import { avoidWalls } from './collisions/avoidWalls.js'
-import { avoidCollisionsWithOtherSnakes } from './collisions/avoidCollisionsWithOtherSnakes.js'
-import { avoidHeadToHead } from './collisions/avoidHeadToHead.js'
+import { preventSelfCollision } from './snake/collisions/preventSelfCollision.js'
+import { avoidWalls } from './snake/collisions/avoidWalls.js'
+import { avoidCollisionsWithOtherSnakes } from './snake/collisions/avoidCollisionsWithOtherSnakes.js'
+import { avoidHeadToHead } from './snake/collisions/avoidHeadToHead.js'
 
 // Movement
-import { moveTowardClosestFood } from './movement/moveTowardClosestFood.js'
+import { moveTowardClosestFood } from './snake/movement/moveTowardClosestFood.js'
 
 // info is called when you create your Battlesnake on play.battlesnake.com and controls your Battlesnake's appearance
 function info() {

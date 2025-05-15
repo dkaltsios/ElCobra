@@ -1,11 +1,10 @@
-import { defineConfig } from 'eslint/config'
-import js from '@eslint/js'
-import globals from 'globals'
+import { defineConfig } from 'eslint/config';
+import js from '@eslint/js';
+import globals from 'globals';
 
-import eslintComments from 'eslint-plugin-eslint-comments'
-import unicorn from 'eslint-plugin-unicorn'
-import sonarjs from 'eslint-plugin-sonarjs'
-import prettier from 'eslint-config-prettier'
+import eslintComments from 'eslint-plugin-eslint-comments';
+import unicorn from 'eslint-plugin-unicorn';
+import sonarjs from 'eslint-plugin-sonarjs';
 
 export default defineConfig([
   {
@@ -33,13 +32,24 @@ export default defineConfig([
 
       // Your custom rules
       semi: ['error', 'always'],
-      quotes: [0, 'double'],
+      quotes: ['warn', 'double'],
 
-      // Prettier compatibility: turn off conflicting formatting rules
+      // Prettier compatibility
       'unicorn/string-content': 'off',
       'unicorn/filename-case': 'off',
       'unicorn/prevent-abbreviations': 'off',
     },
   },
-  prettier,
-])
+  {
+    // This block enables Prettier compatibility properly
+    files: ['**/*.{js,mjs,cjs}'],
+    settings: {},
+    rules: {
+      // Disable rules that conflict with Prettier
+      'prettier/prettier': 'warn',
+    },
+    plugins: {
+      prettier: await import('eslint-plugin-prettier'),
+    },
+  },
+]);

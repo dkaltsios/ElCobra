@@ -5,22 +5,23 @@
 //  |    |   \ / __ \|  |  |  | |  |_\  ___/ \___ \|   |  \/ __ \|    <\  ___/
 //  |________/(______/__|  |__| |____/\_____>______>___|__(______/__|__\\_____>
 //
-// This file can be a nice home for your Battlesnake logic and helper functions.
 //
-// To get you started we've included code to prevent your Battlesnake from moving backwards.
-// For more info see docs.battlesnake.com
+// A BattleSnake JavaScript starter project by CCS2100 Group 1 - ElCobra team
+//
 
 import runServer from './server.js'
 import chalk from 'chalk'
-import { preventSelfCollision } from './snakeMovement.js'
-import { avoidWalls } from './snakeMovement.js'
-import { avoidCollisionsWithOtherSnakes } from './snakeMovement.js'
-import { avoidHeadToHead } from './snakeMovement.js'
-import { moveTowardClosestFood } from './snakeMovement.js'
 
-// info is called when you create your Battlesnake on play.battlesnake.com
-// and controls your Battlesnake's appearance
-// TIP: If you open your Battlesnake URL in a browser you should see this data
+// Collisions
+import { preventSelfCollision } from './snake/collisions/preventSelfCollision.js'
+import { avoidWalls } from './snake/collisions/avoidWalls.js'
+import { avoidCollisionsWithOtherSnakes } from './snake/collisions/avoidCollisionWithOtherSnakes.js'
+import { avoidHeadToHead } from './snake/collisions/avoidHeadToHead.js'
+
+// Movement
+import { moveTowardClosestFood } from './snake/movement/moveTowardsClosestFood.js'
+
+// info is called when you create your Battlesnake on play.battlesnake.com and controls your Battlesnake's appearance
 function info() {
   console.log('INFO')
 
@@ -107,7 +108,6 @@ function move(gameState) {
 function printBoard(g) {
   const board = g
   const printBoard = Array.from({ length: board.height }, () =>
-    // eslint-disable-next-line unicorn/no-new-array
     new Array(board.width).fill('.')
   )
   for (const food of board.food) {

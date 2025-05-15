@@ -62,7 +62,7 @@ export function avoidWalls(gameState, isMoveSafe) {
   return isMoveSafe
 }
 
-//Snake avoids collision with other snakes and can move into other snakes tail, iF it doesn't eat food at the next round
+//Snake avoids collision with other snakes and can move into other snakes tail, iF it doesn't eat food at the next round.
 export function avoidCollisionsWithOtherSnakes(gameState, isMoveSafe) {
   const myHead = gameState.you.body[0]
   const otherSnakes = gameState.board.snakes

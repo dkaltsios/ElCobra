@@ -10,7 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
-
+- Created sample unit tests for avoidCollisionsWithOtherSnakes logic to verify correct behavior.
+- Configured eslint-plugin-jest to lint test files for consistency and quality.
+- Set up Jest for unit testing and added configuration to support testing best practices.
 - Refactored `snakeMovement.js` into modular files under `/snake` directory.
 - Enhanced collision avoidance logic to allow moving into other snakes’ tail segments if those snakes will not eat food on the next move, improving movement flexibility and reducing unnecessary blockages.
 

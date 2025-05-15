@@ -54,10 +54,9 @@ npx prettier --write .
 npx eslint .
 
 ```
+
 📘 Next Steps
 
 - Edit snakeMovement.js to customize your Battlesnake’s strategy.
 - Follow the Quickstart Guide to iterate and test your Battlesnake.
 - Battle it out in the arena!
-
-

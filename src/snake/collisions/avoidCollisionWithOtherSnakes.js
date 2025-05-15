@@ -1,7 +1,9 @@
 export function avoidCollisionsWithOtherSnakes(gameState, isMoveSafe) {
   const myHead = gameState.you.body[0]
   const otherSnakes = gameState.board.snakes
-  const foodPositions = new Set(gameState.board.food.map((f) => `${f.x},${f.y}`))
+  const foodPositions = new Set(
+    gameState.board.food.map((f) => `${f.x},${f.y}`)
+  )
 
   for (const snake of otherSnakes) {
     const snakeHead = snake.body[0]

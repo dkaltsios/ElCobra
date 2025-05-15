@@ -6,8 +6,11 @@
   "scripts": {
     "test": "jest",
     "start": "node index.js",
-    "prettier:check": "prettier --check 'styles/**/*.scss' 'scripts/**/*.{js,jsx,ts,tsx}'",
-    "prettier:fix": "prettier --write 'styles/**/*.scss' 'scripts/**/*.{js,jsx,ts,tsx}'"
+    "prettier:check": "prettier --check \"**/*.{js,jsx,ts,tsx,scss}\"",
+    "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,scss}\"",
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
+    "format": "npm run prettier:fix && npm run lint:fix"
   },
   "keywords": [],
   "author": "",

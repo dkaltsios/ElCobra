@@ -1,10 +1,11 @@
-import { defineConfig } from 'eslint/config';
-import js from '@eslint/js';
-import globals from 'globals';
-
-import eslintComments from 'eslint-plugin-eslint-comments';
-import unicorn from 'eslint-plugin-unicorn';
-import sonarjs from 'eslint-plugin-sonarjs';
+import { defineConfig } from 'eslint/config'
+import js from '@eslint/js'
+import globals from 'globals'
+import eslintComments from 'eslint-plugin-eslint-comments'
+import unicorn from 'eslint-plugin-unicorn'
+import sonarjs from 'eslint-plugin-sonarjs'
+import eslintPluginPrettier from 'eslint-plugin-prettier'
+import eslintPluginJest from 'eslint-plugin-jest' // <-- ADD THIS
 
 export default defineConfig([
   {
@@ -15,6 +16,7 @@ export default defineConfig([
       globals: {
         ...globals.browser,
         ...globals.node,
+        ...globals.jest,
       },
     },
     plugins: {
@@ -22,34 +24,32 @@ export default defineConfig([
       'eslint-comments': eslintComments,
       unicorn,
       sonarjs,
+      jest: eslintPluginJest, // <-- USE THE IMPORTED PLUGIN
     },
     rules: {
       ...js.configs.recommended.rules,
       ...eslintComments.configs.recommended.rules,
       ...unicorn.configs.recommended.rules,
       ...sonarjs.configs.recommended.rules,
+      ...eslintPluginJest.configs.recommended.rules, // <-- USE THE IMPORTED PLUGIN
       'sonarjs/todo-tag': 'off',
 
-      // Your custom rules
-      semi: ['error', 'always'],
-      quotes: ['warn', 'double'],
+      // Match Prettier config:
+      semi: ['error', 'never'],
+      quotes: ['warn', 'single'],
 
-      // Prettier compatibility
       'unicorn/string-content': 'off',
       'unicorn/filename-case': 'off',
       'unicorn/prevent-abbreviations': 'off',
     },
   },
   {
-    // This block enables Prettier compatibility properly
     files: ['**/*.{js,mjs,cjs}'],
-    settings: {},
+    plugins: {
+      prettier: eslintPluginPrettier,
+    },
     rules: {
-      // Disable rules that conflict with Prettier
       'prettier/prettier': 'warn',
     },
-    plugins: {
-      prettier: await import('eslint-plugin-prettier'),
-    },
   },
-]);
+])

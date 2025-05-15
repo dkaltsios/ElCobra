@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [Unreleased]
+
+### Added
+
+- Enhanced collision avoidance logic to allow moving into other snakes’ tail segments if those snakes will not eat food on the next move, improving movement flexibility and reducing unnecessary blockages.
+
+### Changed
+
+- Updated `avoidCollisionsWithOtherSnakes` function to implement this tail-moving logic.
+
+---
+
 ## [v1.0.0] - 2025-04-22
 
 ### Added

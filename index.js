@@ -17,6 +17,7 @@ import { avoidWalls } from './snakeMovement.js'
 import { avoidCollisionsWithOtherSnakes } from './snakeMovement.js'
 import { avoidHeadToHead } from './snakeMovement.js'
 import { moveTowardClosestFood } from './snakeMovement.js'
+
 // info is called when you create your Battlesnake on play.battlesnake.com
 // and controls your Battlesnake's appearance
 // TIP: If you open your Battlesnake URL in a browser you should see this data
@@ -25,10 +26,10 @@ function info() {
 
   return {
     apiversion: '1',
-    author: 'ElCobra', // TODO: Your Battlesnake Username
-    color: '#08C6C7', // TODO: Choose color
-    head: 'silly', // TODO: Choose head
-    tail: 'round-bum', // TODO: Choose tail
+    author: 'ElCobra', // Your Battlesnake Username
+    color: '#08C6C7', // Choose color
+    head: 'silly', //  Choose head
+    tail: 'round-bum', //  Choose tail
   }
 }
 
@@ -71,20 +72,20 @@ function move(gameState) {
     isMoveSafe.up = false
   }
 
-  // TODO: Step 1 - Prevent your Battlesnake from moving out of bounds
+  //  Prevent your Battlesnake from moving out of bounds
   isMoveSafe = avoidWalls(gameState, isMoveSafe)
 
-  // TODO 2 - Ensuring that battlesnake does not collide with itself
+  //  Ensuring that battlesnake does not collide with itself
   isMoveSafe = preventSelfCollision(gameState, isMoveSafe)
 
-  // TODO: Step 3 - Prevent your Battlesnake from colliding with other Battlesnakes
+  //  Prevent your Battlesnake from colliding with other Battlesnakes
   isMoveSafe = avoidCollisionsWithOtherSnakes(gameState, isMoveSafe)
 
-  // TODO: Step 4 - Prevent your Battlesnake from colliding with other Battlesnakes' heads
+  // Prevent your Battlesnake from colliding with other Battlesnakes' heads
   // Avoid head-to-head collisions
   isMoveSafe = avoidHeadToHead(gameState, isMoveSafe)
 
-  // TODO: Step 5 - Move towards food instead of random
+  //  Move towards food instead of random
   isMoveSafe = moveTowardClosestFood(gameState, isMoveSafe)
 
   // Are there any safe moves left?

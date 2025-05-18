@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Implemented a heuristic evaluation method to assess game states and improve move decisions.
 - Created sample unit tests for avoidCollisionsWithOtherSnakes logic to verify correct behavior.
 - Configured eslint-plugin-jest to lint test files for consistency and quality.
 - Set up Jest for unit testing and added configuration to support testing best practices.

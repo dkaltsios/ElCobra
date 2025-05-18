@@ -20,6 +20,7 @@ import { avoidHeadToHead } from './snake/collisions/avoidHeadToHead.js'
 
 // Movement
 import { moveTowardClosestFood } from './snake/movement/moveTowardsClosestFood.js'
+import { evaluateGameState } from './snake/movement/evaluateGameState.js'
 
 // info is called when you create your Battlesnake on play.battlesnake.com and controls your Battlesnake's appearance
 function info() {
@@ -96,6 +97,7 @@ function move(gameState) {
     return { move: 'down' }
   }
 
+  evaluateGameState(gameState)
   // Choose the first safe move
   const nextMove = safeMoves[0]
 

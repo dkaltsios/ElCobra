@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Created and run test files for all files in `/collision` and `/movement` folders
 - Implemented a heuristic evaluation method to assess game states and improve move decisions.
 - Created sample unit tests for avoidCollisionsWithOtherSnakes logic to verify correct behavior.
 - Configured eslint-plugin-jest to lint test files for consistency and quality.

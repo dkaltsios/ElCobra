@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [Unreleased]
+
+### Added
+
+- Implemented flood-fill algorithm for board analysis to improve safe-move selection.
+- Created and run test files for all files in `/collision` and `/movement` folders
+- Implemented a heuristic evaluation method to assess game states and improve move decisions.
+- Created sample unit tests for avoidCollisionsWithOtherSnakes logic to verify correct behavior.
+- Configured eslint-plugin-jest to lint test files for consistency and quality.
+- Set up Jest for unit testing and added configuration to support testing best practices.
+- Refactored `snakeMovement.js` into modular files under `/snake` directory.
+- Enhanced collision avoidance logic to allow moving into other snakes’ tail segments if those snakes will not eat food on the next move, improving movement flexibility and reducing unnecessary blockages.
+
+### Changed
+
+- Updated `avoidCollisionsWithOtherSnakes` function to implement this tail-moving logic.
+
+---
+
 ## [v1.0.0] - 2025-04-22
 
 ### Added

@@ -5,34 +5,30 @@
 //  |    |   \ / __ \|  |  |  | |  |_\  ___/ \___ \|   |  \/ __ \|    <\  ___/
 //  |________/(______/__|  |__| |____/\_____>______>___|__(______/__|__\\_____>
 //
+// This file can be a nice home for your Battlesnake logic and helper functions.
 //
-// A BattleSnake JavaScript starter project by CCS2100 Group 1 - ElCobra team
-//
+// To get you started we've included code to prevent your Battlesnake from moving backwards.
+// For more info see docs.battlesnake.com
 
 import runServer from './server.js'
 import chalk from 'chalk'
-
-// Collisions
-import { preventSelfCollision } from './snake/collisions/preventSelfCollision.js'
-import { avoidWalls } from './snake/collisions/avoidWalls.js'
-import { avoidCollisionsWithOtherSnakes } from './snake/collisions/avoidCollisionWithOtherSnakes.js'
-import { avoidHeadToHead } from './snake/collisions/avoidHeadToHead.js'
-
-// Movement
-import { moveTowardClosestFood } from './snake/movement/moveTowardsClosestFood.js'
-import { evaluateGameState } from './snake/movement/evaluateGameState.js'
-import { filterDeadEndMoves } from './snake/movement/floodFill.js'
-
-// info is called when you create your Battlesnake on play.battlesnake.com and controls your Battlesnake's appearance
+import { preventSelfCollision } from './snakeMovement.js'
+import { avoidWalls } from './snakeMovement.js'
+import { avoidCollisionsWithOtherSnakes } from './snakeMovement.js'
+import { avoidHeadToHead } from './snakeMovement.js'
+import { moveTowardClosestFood } from './snakeMovement.js'
+// info is called when you create your Battlesnake on play.battlesnake.com
+// and controls your Battlesnake's appearance
+// TIP: If you open your Battlesnake URL in a browser you should see this data
 function info() {
   console.log('INFO')
 
   return {
     apiversion: '1',
-    author: 'ElCobra', // Your Battlesnake Username
-    color: '#C209E0', // Choose color
-    head: 'silly', //  Choose head
-    tail: 'round-bum', //  Choose tail
+    author: 'ElCobra', // TODO: Your Battlesnake Username
+    color: '#C209E0', // TODO: Choose color
+    head: 'silly', // TODO: Choose head
+    tail: 'round-bum', // TODO: Choose tail
   }
 }
 
@@ -75,24 +71,21 @@ function move(gameState) {
     isMoveSafe.up = false
   }
 
-  //  Prevent your Battlesnake from moving out of bounds
+  // TODO: Step 1 - Prevent your Battlesnake from moving out of bounds
   isMoveSafe = avoidWalls(gameState, isMoveSafe)
 
-  //  Ensuring that battlesnake does not collide with itself
+  // TODO 2 - Ensuring that battlesnake does not collide with itself
   isMoveSafe = preventSelfCollision(gameState, isMoveSafe)
 
-  //  Prevent your Battlesnake from colliding with other Battlesnakes
+  // TODO: Step 3 - Prevent your Battlesnake from colliding with other Battlesnakes
   isMoveSafe = avoidCollisionsWithOtherSnakes(gameState, isMoveSafe)
 
-  // Prevent your Battlesnake from colliding with other Battlesnakes' heads
+  // TODO: Step 4 - Prevent your Battlesnake from colliding with other Battlesnakes' heads
   // Avoid head-to-head collisions
   isMoveSafe = avoidHeadToHead(gameState, isMoveSafe)
 
-  //  Move towards food instead of random
+  // TODO: Step 5 - Move towards food instead of random
   isMoveSafe = moveTowardClosestFood(gameState, isMoveSafe)
-
-  //  Filter out dead-end moves
-  isMoveSafe = filterDeadEndMoves(gameState, isMoveSafe)
 
   // Are there any safe moves left?
   const safeMoves = Object.keys(isMoveSafe).filter((key) => isMoveSafe[key])
@@ -101,7 +94,6 @@ function move(gameState) {
     return { move: 'down' }
   }
 
-  evaluateGameState(gameState)
   // Choose the first safe move
   const nextMove = safeMoves[0]
 
@@ -114,6 +106,7 @@ function move(gameState) {
 function printBoard(g) {
   const board = g
   const printBoard = Array.from({ length: board.height }, () =>
+    // eslint-disable-next-line unicorn/no-new-array
     new Array(board.width).fill('.')
   )
   for (const food of board.food) {

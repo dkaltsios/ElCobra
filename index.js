@@ -21,6 +21,7 @@ import { avoidHeadToHead } from './snake/collisions/avoidHeadToHead.js'
 // Movement
 import { moveTowardClosestFood } from './snake/movement/moveTowardsClosestFood.js'
 import { evaluateGameState } from './snake/movement/evaluateGameState.js'
+import { filterDeadEndMoves } from './snake/movement/floodFill.js'
 
 // info is called when you create your Battlesnake on play.battlesnake.com and controls your Battlesnake's appearance
 function info() {
@@ -89,6 +90,9 @@ function move(gameState) {
 
   //  Move towards food instead of random
   isMoveSafe = moveTowardClosestFood(gameState, isMoveSafe)
+
+  //  Filter out dead-end moves
+  isMoveSafe = filterDeadEndMoves(gameState, isMoveSafe)
 
   // Are there any safe moves left?
   const safeMoves = Object.keys(isMoveSafe).filter((key) => isMoveSafe[key])

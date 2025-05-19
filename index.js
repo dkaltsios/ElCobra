@@ -30,7 +30,7 @@ function info() {
   return {
     apiversion: '1',
     author: 'ElCobra', // Your Battlesnake Username
-    color: '#08C6C7', // Choose color
+    color: '#C209E0', // Choose color
     head: 'silly', //  Choose head
     tail: 'round-bum', //  Choose tail
   }

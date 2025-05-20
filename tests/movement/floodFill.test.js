@@ -1,4 +1,7 @@
-import { floodFillBoard, filterDeadEndMoves } from '../../snake/movement/floodFill.js'
+import {
+  floodFillBoard,
+  filterDeadEndMoves,
+} from '../../snake/movement/floodFill.js'
 
 describe('floodFillBoard', () => {
   const emptyBoard = { width: 3, height: 3, snakes: [], hazards: [] }

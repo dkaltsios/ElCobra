@@ -33,6 +33,7 @@ function info() {
     color: '#C209E0', // Choose color
     head: 'silly', //  Choose head
     tail: 'round-bum', //  Choose tail
+
   }
 }
 

@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [Unreleased]
+## [v1.2.0] - 2025-05-20
 
 ### Added
 - Implemented a one-move lookahead strategy using `simulateMove` and `evaluateGameState` to improve decision-making.

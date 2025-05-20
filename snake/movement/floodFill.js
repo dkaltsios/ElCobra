@@ -27,9 +27,9 @@ export function floodFillBoard(board, start) {
     count++
     // Explore neighbors
     stack.push(
-      `${x},${y - 1}`,
-      `${x + 1},${y}`,
       `${x},${y + 1}`,
+      `${x + 1},${y}`,
+      `${x},${y - 1}`,
       `${x - 1},${y}`
     )
   }
@@ -47,9 +47,9 @@ export function filterDeadEndMoves(gameState, isMoveSafe) {
   const { board, you } = gameState
   const { x: hx, y: hy } = you.head
   const moves = {
-    up: { x: hx, y: hy - 1 },
+    up: { x: hx, y: hy + 1 },
     right: { x: hx + 1, y: hy },
-    down: { x: hx, y: hy + 1 },
+    down: { x: hx, y: hy - 1 },
     left: { x: hx - 1, y: hy },
   }
 

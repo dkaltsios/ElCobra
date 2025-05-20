@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Updated `avoidCollisionsWithOtherSnakes` function to implement this tail-moving logic.
 
-### Changed
+### Fixed
 
 - Hotfix: Changed snake color to improve visibility on the game board.
 

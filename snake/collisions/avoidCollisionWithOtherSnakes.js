@@ -1,3 +1,4 @@
+// eslint-disable-next-line sonarjs/cognitive-complexity
 export function avoidCollisionsWithOtherSnakes(gameState, isMoveSafe) {
   const myHead = gameState.you.body[0]
   const otherSnakes = gameState.board.snakes

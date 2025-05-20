@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [Unreleased]
+
+### Added
+- Implemented a one-move lookahead strategy using `simulateMove` and `evaluateGameState` to improve decision-making.
+- Integrated the new lookahead logic into the snake's `move` function to evaluate and score each possible move.
+- Restored the `printBoard` function for visualizing the game board during move decisions (for debugging purposes).
+
+---
+
 ## [v1.1.0] - 2025-05-20
 
 ### Added

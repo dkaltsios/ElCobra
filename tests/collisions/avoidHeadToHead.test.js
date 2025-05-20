@@ -1,4 +1,4 @@
-import { avoidHeadToHead } from '../../snake/collisions/avoidHeadToHead.js';
+import { avoidHeadToHead } from '../../snake/collisions/avoidHeadToHead.js'
 
 describe('avoidHeadToHead', () => {
   it('marks move unsafe if another equal or larger snake can move there', () => {
@@ -7,7 +7,7 @@ describe('avoidHeadToHead', () => {
         id: '1',
         head: { x: 5, y: 5 },
         body: [{ x: 5, y: 5 }],
-        length: 3
+        length: 3,
       },
       board: {
         snakes: [
@@ -15,15 +15,15 @@ describe('avoidHeadToHead', () => {
             id: '2',
             head: { x: 6, y: 5 },
             body: [{ x: 6, y: 5 }],
-            length: 3
-          }
-        ]
-      }
-    };
+            length: 3,
+          },
+        ],
+      },
+    }
 
-    const isMoveSafe = { up: true, down: true, left: true, right: true };
-    const result = avoidHeadToHead(gameState, { ...isMoveSafe });
+    const isMoveSafe = { up: true, down: true, left: true, right: true }
+    const result = avoidHeadToHead(gameState, { ...isMoveSafe })
 
-    expect(result.right).toBe(true);
-  });
-});
+    expect(result.right).toBe(true)
+  })
+})

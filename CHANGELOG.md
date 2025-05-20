@@ -7,10 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [Unreleased]
+## [v1.1.0] - 2025-05-20
 
 ### Added
-
 - Implemented flood-fill algorithm for board analysis to improve safe-move selection.
 - Created and run test files for all files in `/collision` and `/movement` folders
 - Implemented a heuristic evaluation method to assess game states and improve move decisions.
@@ -23,6 +22,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 
 - Updated `avoidCollisionsWithOtherSnakes` function to implement this tail-moving logic.
+
+### Fixed
+
+- Hotfix: Changed snake color to improve visibility on the game board.
+
 
 ---
 

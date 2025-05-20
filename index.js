@@ -22,6 +22,7 @@ import { avoidHeadToHead } from './snake/collisions/avoidHeadToHead.js'
 import { moveTowardClosestFood } from './snake/movement/moveTowardsClosestFood.js'
 import { evaluateGameState } from './snake/movement/evaluateGameState.js'
 import { filterDeadEndMoves } from './snake/movement/floodFill.js'
+import { simulateMove } from './snake/movement/simulateMove.js'
 
 // info is called when you create your Battlesnake on play.battlesnake.com and controls your Battlesnake's appearance
 function info() {
@@ -101,20 +102,30 @@ function move(gameState) {
     return { move: 'down' }
   }
 
-  evaluateGameState(gameState)
-  // Choose the first safe move
-  const nextMove = safeMoves[0]
+  // Simulate each safe move and evaluate the resulting game state
+  let bestMove = safeMoves[0] // Default to the first safe move
+  let bestScore = -Infinity
 
-  // Log the game state
-  printBoard(gameState.board)
-  console.log('The gamestate is:', gameState)
-  console.log(`MOVE ${gameState.turn}: ${nextMove}`)
-  return { move: nextMove }
+  for (const move of safeMoves) {
+    const simulatedGameState = simulateMove(gameState, move)
+    const score = evaluateGameState(simulatedGameState)
+
+    // Log the game state
+    if (score > bestScore) {
+      bestScore = score
+      bestMove = move
+    }
+  }
+
+  console.log(`MOVE ${gameState.turn}: ${bestMove} (score: ${bestScore})`)
+  printBoard(gameState.board) // Print the board for debugging
+  return { move: bestMove }
 }
+
 function printBoard(g) {
   const board = g
   const printBoard = Array.from({ length: board.height }, () =>
-    new Array(board.width).fill('.')
+    Array.from({ length: board.width }).fill('.')
   )
   for (const food of board.food) {
     printBoard[food.y][food.x] = chalk.red('F')

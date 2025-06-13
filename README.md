@@ -4,7 +4,9 @@ An official Battlesnake written in JavaScript. Get started at [play.battlesnake.
 
 ![Battlesnake Logo](https://media.battlesnake.com/social/StarterSnakeGitHubRepos_JavaScript.png)
 
-ElCobra is a Battlesnake project built with modern best practices including code linting, formatting, and cloud deployment using Railway.
+ElCobra is a Battlesnake project built with modern best practices including code linting, formatting, testing, CI workflows, and cloud deployment using Railway.
+
+---
 
 ## 🛠 Technologies Used
 
@@ -19,6 +21,9 @@ ElCobra is a Battlesnake project built with modern best practices including code
     - `eslint-plugin-sonarjs`
     - `eslint-plugin-unicorn`
     - `eslint-plugin-eslint-comments`
+- [Jest](https://jestjs.io/) for testing
+
+---
 
 ## 🚀 Deployment
 
@@ -38,25 +43,125 @@ After deployment, Railway provides a public URL for your Battlesnake. Use this U
 4. Deploy the project.
 5. Copy the generated public URL and use it on the Battlesnake website.
 
+To manually deploy locally with Railway CLI:
+
+```bash
+railway up
+```
+
+---
+
 ## 🧹 Code Quality
 
-This project uses Prettier and ESLint to maintain clean and consistent code.
+This project uses ESLint and Prettier to maintain clean and consistent code.
 
-### Format Code
-
-```bash
-npx prettier --write .
-```
-
-### Lint Code
+### ▶️ Format Code (Prettier)
 
 ```bash
-npx eslint .
-
+npm run format
 ```
 
-📘 Next Steps
+To format your code using Prettier.
 
-- Edit snakeMovement.js to customize your Battlesnake’s strategy.
+### ▶️ Lint Code (ESLint)
+
+```bash
+npm run lint
+```
+
+To check for lint issues.
+
+```bash
+npm run lint:fix
+```
+
+To automatically fix lint issues.
+
+---
+
+## 🧪 Testing
+
+This project uses [Jest](https://jestjs.io/) for unit testing.
+
+### ▶️ Run Tests
+
+```bash
+npm test
+```
+
+Runs the test suite and shows test coverage.
+
+- ✅ Code coverage threshold: **50% minimum**
+- Use this to validate any PR or change before pushing
+
+---
+
+## ⚙️ GitHub Actions Workflows
+
+We use GitHub Actions to automate code quality and deployment tasks.
+
+### 🔍 1. Lint & Format Checks
+
+- **Workflows:** `lint.yml`, `format.yml`
+- **Triggered on:** Pull requests targeting `main` or `develop`
+- **What they do:** Run ESLint and Prettier to ensure code is properly linted and formatted
+
+### ✅ 2. Test & Coverage
+
+- **Workflow:** `test-coverage.yml`
+- **Triggered on:** Pull requests to `main` or `develop`
+- **What it does:**
+  - Runs all Jest tests
+  - Verifies that code coverage is **≥ 50%**
+
+### 🚀 3. Deploy to Railway
+
+- **Workflow:** `deploy.yml`
+- **Triggered on:** Push to the `main` branch
+- **What it does:**
+  - Builds and deploys your Battlesnake to Railway
+
+---
+
+## 🛡 Dependabot
+
+We use **Dependabot** for automatic security and dependency updates:
+
+- Actively scans for vulnerabilities
+- Creates pull requests to upgrade affected packages
+- Pull requests are required to pass lint, format, and test checks
+
+---
+
+## 🔁 Developer Workflow Summary
+
+1. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+2. **Format & Lint**
+   ```bash
+   npm run format
+   npm run lint
+   ```
+
+3. **Run Tests**
+   ```bash
+   npm test
+   ```
+
+4. **Create a PR**
+   - Target `develop` or `main`
+   - CI will run tests, linting, formatting, and coverage checks
+
+5. **Merge to `main`**
+   - Deploys automatically to Railway
+
+---
+
+## 📘 Next Steps
+
+- Edit `snakeMovement.js` to customize your Battlesnake’s strategy.
 - Follow the Quickstart Guide to iterate and test your Battlesnake.
 - Battle it out in the arena!

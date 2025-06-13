@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## Unreleased 
+
+### Added
+- Implemented a `Hunt Smaller Snakes` logic to improve snake's attacking capabilities using Test Driven Development
+
+---
+
 ## [v1.2.0] - 2025-05-20
 
 ### Added

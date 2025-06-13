@@ -9,6 +9,7 @@ import eslintPluginJest from 'eslint-plugin-jest' // <-- ADD THIS
 
 export default defineConfig([
   {
+    ignores: ['coverage/**'], // <-- Add this line to ignore coverage folder
     files: ['**/*.{js,mjs,cjs}'],
     languageOptions: {
       ecmaVersion: 2021,

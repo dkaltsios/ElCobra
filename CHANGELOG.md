@@ -7,9 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## Unreleased 
+## Unreleased
 
 ### Added
+- Created GitHub Actions workflows for:
+  - Running Jest tests on pull requests to `main` and `develop` branches.
+  - Running ESLint and Prettier lint checks on pull requests to `main` and `develop`.
+  - Checking test coverage threshold (≥ 50%) on pull requests to `main` and `develop`.
+  - Deploying the application to Railway on pushes to the `main` branch.
 - Implemented a `Hunt Smaller Snakes` logic to improve snake's attacking capabilities using Test Driven Development
 
 ---

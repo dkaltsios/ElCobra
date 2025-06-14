@@ -1,8 +1,15 @@
 /**
- * Compute the size of the reachable area from a given start position
+ * @module floodFill
+ * @description This module implements logic to compute the size of the reachable area from a given start position using flood-fill algorithm on the Battlesnake board.
+ * @exports floodFillBoard
+ * @exports filterDeadEndMoves
+ */
+/**
+ * @function floodFillBoard
+ * @description Compute the size of the reachable area from a given start position
  * using flood-fill on the Battlesnake board.
  * @param {object} board - gameState.board object (width, height, snakes, hazards)
- * @param {{x:number,y:number}} start - Starting coordinates (e.g., after a potential move)
+ * @param {{x:number,y:number}} start - Starting coordinates
  * @returns {number} - Number of reachable cells (0 if start is blocked)
  */
 export function floodFillBoard(board, start) {
@@ -38,7 +45,8 @@ export function floodFillBoard(board, start) {
 }
 
 /**
- * Mutates isMoveSafe, marking moves that lead into dead-ends (area ≤ 1) as unsafe.
+ * @function filterDeadEndMoves
+ * @ddescription Mutates isMoveSafe, marking moves that lead into dead-ends (area ≤ 1) as unsafe.
  * @param {object} gameState - Full Battlesnake API payload
  * @param {object} isMoveSafe - map of move => boolean
  * @returns {object} isMoveSafe - updated map with dead-end moves removed

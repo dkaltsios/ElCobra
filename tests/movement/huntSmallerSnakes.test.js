@@ -5,17 +5,28 @@ describe('huntSmallerSnakes', () => {
     const gameState = {
       you: {
         id: 'me',
-        body: [{ x: 2, y: 2 }, { x: 2, y: 1 }, { x: 2, y: 0 }],
+        body: [
+          { x: 2, y: 2 },
+          { x: 2, y: 1 },
+          { x: 2, y: 0 },
+        ],
       },
       board: {
         snakes: [
           {
             id: 'me',
-            body: [{ x: 2, y: 2 }, { x: 2, y: 1 }, { x: 2, y: 0 }],
+            body: [
+              { x: 2, y: 2 },
+              { x: 2, y: 1 },
+              { x: 2, y: 0 },
+            ],
           },
           {
             id: 'small',
-            body: [{ x: 3, y: 2 }, { x: 3, y: 1 }],
+            body: [
+              { x: 3, y: 2 },
+              { x: 3, y: 1 },
+            ],
           },
         ],
       },
@@ -29,17 +40,28 @@ describe('huntSmallerSnakes', () => {
     const gameState = {
       you: {
         id: 'me',
-        body: [{ x: 2, y: 2 }, { x: 2, y: 1 }, { x: 2, y: 0 }],
+        body: [
+          { x: 2, y: 2 },
+          { x: 2, y: 1 },
+          { x: 2, y: 0 },
+        ],
       },
       board: {
         snakes: [
           {
             id: 'me',
-            body: [{ x: 2, y: 2 }, { x: 2, y: 1 }, { x: 2, y: 0 }],
+            body: [
+              { x: 2, y: 2 },
+              { x: 2, y: 1 },
+              { x: 2, y: 0 },
+            ],
           },
           {
             id: 'small',
-            body: [{ x: 5, y: 5 }, { x: 5, y: 4 }],
+            body: [
+              { x: 5, y: 5 },
+              { x: 5, y: 4 },
+            ],
           },
         ],
       },
@@ -53,17 +75,29 @@ describe('huntSmallerSnakes', () => {
     const gameState = {
       you: {
         id: 'me',
-        body: [{ x: 2, y: 2 }, { x: 2, y: 1 }, { x: 2, y: 0 }],
+        body: [
+          { x: 2, y: 2 },
+          { x: 2, y: 1 },
+          { x: 2, y: 0 },
+        ],
       },
       board: {
         snakes: [
           {
             id: 'me',
-            body: [{ x: 2, y: 2 }, { x: 2, y: 1 }, { x: 2, y: 0 }],
+            body: [
+              { x: 2, y: 2 },
+              { x: 2, y: 1 },
+              { x: 2, y: 0 },
+            ],
           },
           {
             id: 'big',
-            body: [{ x: 3, y: 2 }, { x: 3, y: 1 }, { x: 3, y: 0 }],
+            body: [
+              { x: 3, y: 2 },
+              { x: 3, y: 1 },
+              { x: 3, y: 0 },
+            ],
           },
         ],
       },
@@ -77,17 +111,28 @@ describe('huntSmallerSnakes', () => {
     const gameState = {
       you: {
         id: 'me',
-        body: [{ x: 2, y: 2 }, { x: 2, y: 1 }, { x: 2, y: 0 }],
+        body: [
+          { x: 2, y: 2 },
+          { x: 2, y: 1 },
+          { x: 2, y: 0 },
+        ],
       },
       board: {
         snakes: [
           {
             id: 'me',
-            body: [{ x: 2, y: 2 }, { x: 2, y: 1 }, { x: 2, y: 0 }],
+            body: [
+              { x: 2, y: 2 },
+              { x: 2, y: 1 },
+              { x: 2, y: 0 },
+            ],
           },
           {
             id: 'small',
-            body: [{ x: 3, y: 2 }, { x: 3, y: 1 }],
+            body: [
+              { x: 3, y: 2 },
+              { x: 3, y: 1 },
+            ],
           },
         ],
       },

@@ -8,7 +8,7 @@ import eslintPluginPrettier from 'eslint-plugin-prettier'
 import eslintPluginJest from 'eslint-plugin-jest' // <-- ADD THIS
 
 export default defineConfig([
-  globalIgnores(['out/', 'coverage/']),
+  globalIgnores(['out/', 'coverage/', 'out/scripts/prettify/prettify.js']),
   {
     files: ['**/*.{js,mjs,cjs}'],
     languageOptions: {

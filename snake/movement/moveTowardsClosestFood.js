@@ -1,3 +1,15 @@
+/** @module moveTowardClosestFood
+ * @description This module implements logic to move towards the closest food on the board.
+ * @exports moveTowardClosestFood
+ */
+
+/**
+ * @function moveTowardClosestFood
+ * @description This function finds the closest food to the Battlesnake's head and return safe moves so that the Battlesnake moves towards the closest food.
+ * @param {Object} gameState - The current state of the game
+ * @param {Object} isMoveSafe - A map of move => boolean
+ * @returns {Object} isMoveSafe - The updated map of move => boolean
+ */
 export function moveTowardClosestFood(gameState, isMoveSafe) {
   const myHead = gameState.you.body[0]
   function getClosestFood() {
@@ -45,6 +57,16 @@ export function moveTowardClosestFood(gameState, isMoveSafe) {
   }
   return newIsMoveSafe
 }
+
+/**
+ * @function getDistanceFromTo
+ * @description This function calculates the distance between two points.
+ * @param {number} x1 - The x-coordinate of the first point.
+ * @param {number} y1 - The y-coordinate of the first point.
+ * @param {number} x2 - The x-coordinate of the second point.
+ * @param {number} y2 - The y-coordinate of the second point.
+ * @returns {number} - The distance between the two points.
+ */
 function getDistanceFromTo(x1, y1, x2, y2) {
   return Math.abs(x2 - x1) + Math.abs(y2 - y1)
 }

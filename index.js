@@ -9,6 +9,20 @@
 // A BattleSnake JavaScript starter project by CCS2100 Group 1 - ElCobra team
 //
 
+/**
+ * @file Battlesnake JavaScript main file. Contains all the logic for your Battlesnake.
+ * @requires server
+ * @requires chalk
+ * @requires preventSelfCollision
+ * @requires avoidWalls
+ * @requires avoidCollisionWithOtherSnakes
+ * @requires avoidHeadToHead
+ * @requires moveTowardClosestFood
+ * @requires evaluateGameState
+ * @requires floodFill
+ * @requires simulateMove
+ */
+
 import runServer from './server.js'
 import chalk from 'chalk'
 
@@ -24,7 +38,12 @@ import { evaluateGameState } from './snake/movement/evaluateGameState.js'
 import { filterDeadEndMoves } from './snake/movement/floodFill.js'
 import { simulateMove } from './snake/movement/simulateMove.js'
 
-// info is called when you create your Battlesnake on play.battlesnake.com and controls your Battlesnake's appearance
+/**
+ * @function info
+ * @description Returns object with information about your Battlesnake. This function is called when you create your Battlesnake on play.battlesnake.com and controls your Battlesnake's appearance.
+ * @returns {{ apiversion: string; author: string; color: string; head: string; tail: string; }}
+ */
+
 function info() {
   console.log('INFO')
 
@@ -37,16 +56,28 @@ function info() {
   }
 }
 
-// start is called when your Battlesnake begins a game
+/**
+ * @function start
+ * @description This function is called whenever your Battlesnake is entered into a game.
+ */
 function start() {
   console.log('GAME START')
 }
 
-// end is called when your Battlesnake finishes a game
+/**
+ * @function end
+ * @description This function is called whenever your Battlesnake finishes a game.
+ */
 function end() {
   console.log('GAME OVER\n')
 }
 
+/**
+ * @function move
+ * @description This function is called on every turn and returns next move of your Battlesnake.
+ * @param {object} gameState
+ * @returns {move: string} - Valid moves are "up", "down", "left", or "right".
+ */
 // move is called on every turn and returns your next move
 // Valid moves are "up", "down", "left", or "right"
 // See https://docs.battlesnake.com/api/example-move for available data
@@ -122,6 +153,11 @@ function move(gameState) {
   return { move: bestMove }
 }
 
+/**
+ * @function printBoard
+ * @description Function to print the board in the terminal
+ * @param {object} g
+ */
 function printBoard(g) {
   const board = g
   const printBoard = Array.from({ length: board.height }, () =>
@@ -139,6 +175,7 @@ function printBoard(g) {
     console.log(printBoard[row].join(' '))
   }
 }
+
 runServer({
   info: info,
   start: start,

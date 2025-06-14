@@ -1,5 +1,16 @@
+/**
+ * @module server
+ * @description Express server to run Battlesnake
+ * @requires express
+ */
+
 import express from 'express'
 
+/**
+ * @function runServer
+ * @description Function to run the express server
+ * @param {Object} handlers - Object containing the Battlesnake handlers
+ */
 export default function runServer(handlers) {
   const app = express()
   app.disable('x-powered-by')

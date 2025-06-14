@@ -1,3 +1,15 @@
+/**
+ * @module simulateMove
+ * @description This module implements logic to simulate a move of your Battlesnake on the board.
+ * @exports simulateMove
+ */
+/**
+ * @function simulateMove
+ * @description This function returns simulated state of the board after a move of your Battlesnake.
+ * @param {object} gameState - the current state of the game
+ * @param {string} move - the move of your Battlesnake
+ * @returns {object} newGameState - the simulated state of the game
+ */
 export function simulateMove(gameState, move) {
   const newGameState = structuredClone(gameState) // Deep copy the game state
   const myHead = newGameState.you.body[0]

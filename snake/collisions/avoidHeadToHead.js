@@ -1,3 +1,15 @@
+/** @module avoidHeadToHead
+ * @description This module implements logic to avoid collisions with other snakes on the board. It is additional to the `avoidCollisionsWithOtherSnakes` module. It checks for head-to-head collisions between your Battlesnake and other snakes on the board.
+ * @exports avoidHeadToHead
+ */
+
+/**
+ * @function avoidHeadToHead
+ * @description This function checks for head-to-head collisions between your Battlesnake and other snakes on the board and returns safe moves for your Battlesnake.
+ * @param {object} gameState - the current state of the game
+ * @param {object} isMoveSafe - map of move => boolean
+ * @returns {object} isMoveSafe - updated list of safe moves
+ */
 export function avoidHeadToHead(gameState, isMoveSafe) {
   const myHead = gameState.you.head
   const myLength = gameState.you.length

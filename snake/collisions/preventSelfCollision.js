@@ -1,3 +1,15 @@
+/**
+ * @module preventSelfCollision
+ * @description This module implements logic to avoid collisions with your own body on the board.
+ * @exports preventSelfCollision
+ */
+/**
+ * @function preventSelfCollision
+ * @description This function checks for collisions with your own body on the board and returns safe moves for your Battlesnake.
+ * @param {object} gameState - the current state of the game
+ * @param {object} isMoveSafe - map of move => boolean
+ * @returns {object} isMoveSafe - updated list of safe moves
+ */
 export function preventSelfCollision(gameState, isMoveSafe) {
   const myBody = gameState.you.body
   const myHead = gameState.you.body[0]

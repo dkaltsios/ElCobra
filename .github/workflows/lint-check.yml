@@ -20,13 +20,13 @@ jobs:
         run: npm ci
 
       - name: Run ESLint auto-fix
-        run: npx eslint . --fix
+        run: npx eslint . --fix  --ignore-path .eslintignore
 
       - name: Run Prettier auto-fix
-        run: npx prettier . --write
+        run: npx prettier . --write --ignore-path .prettierignore
 
       - name: Check ESLint again (fail if issues remain)
-        run: npx eslint .
+        run: npx eslint . --ignore-path .eslintignore
 
       - name: Check Prettier formatting
-        run: npx prettier . --check
+        run: npx prettier . --check --ignore-path .prettierignore

@@ -1,3 +1,16 @@
+/**
+ * @module avoidCollisionWithOtherSnakes
+ * @description This module implements logic to avoid collisions with other snakes on the board.
+ * @exports avoidCollisionsWithOtherSnakes
+ */
+
+/**
+ * @function avoidCollisionsWithOtherSnakes
+ * @description This function checks for collisions with other snakes and returns safe moves for your Battlesnake.
+ * @param {object} gameState - the current state of the game
+ * @param {object} isMoveSafe - map of move => boolean
+ * @returns {object} isMoveSafe - updated list of safe moves with dead-end moves removed
+ */
 // eslint-disable-next-line sonarjs/cognitive-complexity
 export function avoidCollisionsWithOtherSnakes(gameState, isMoveSafe) {
   const myHead = gameState.you.body[0]

@@ -19,14 +19,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run ESLint auto-fix
-        run: npx eslint . --fix  --ignore-path .eslintignore
-
-      - name: Run Prettier auto-fix
-        run: npx prettier . --write --ignore-path .prettierignore
-
-      - name: Check ESLint again (fail if issues remain)
-        run: npx eslint . --ignore-path .eslintignore
+      - name: Check ESLint 
+        run: npx eslint .
 
       - name: Check Prettier formatting
-        run: npx prettier . --check --ignore-path .prettierignore
+        run: npx prettier . --check

@@ -1,0 +1,4 @@
+# .eslintignore
+out/
+scripts/
+out/scripts/prettify/prettify.js

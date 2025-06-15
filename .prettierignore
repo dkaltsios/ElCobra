@@ -1,7 +1,10 @@
 node_modules
 dist
 build
-coverage
+coverage/
 package-lock.json
 .env
 *.log
+out/
+scripts/
+out/scripts/prettify/prettify.js

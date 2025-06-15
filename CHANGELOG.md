@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## Unreleased
+## [v1.3.0] - 2025-06-15
 
 ### Changed
 - Relocated `dependabot.yml` configuration file to `.github/` directory to comply with GitHub's standard structure.
@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - Checking test coverage threshold (≥ 50%) on pull requests to `main` and `develop`.
   - Deploying the application to Railway on pushes to the `main` branch.
 - Implemented a `Hunt Smaller Snakes` logic to improve snake's attacking capabilities using Test Driven Development
+
 
 ---
 

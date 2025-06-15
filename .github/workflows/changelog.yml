@@ -3,7 +3,7 @@ name: Update Changelog
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*' 
 
 jobs:
   changelog:
@@ -26,13 +26,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Update changelog only (no version bump, no tag)
+      - name: Update changelog only (skip version bump and tagging)
         run: npm run release
 
-      - name: Commit and push updated changelog
+      - name: Push changes if any
         run: |
-          git add CHANGELOG.md
-          git commit -m "docs(changelog): update changelog for ${{ github.ref_name }}"
-          git push
+          if [ -n "$(git status --porcelain)" ]; then
+            git push
+          else
+            echo "No changes to push"
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

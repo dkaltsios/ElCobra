@@ -12,7 +12,7 @@
     "lint:fix": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
     "format": "npm run prettier:fix && npm run lint:fix",
     "jsdoc": "jsdoc -r -c jsdoc.config.json ./",
-    "release": "standard-version --skip.tag=true --skip.bump=true"
+    "release": "standard-version --skip.bump=true --skip.tag=true --skip.commit=false"
   },
   "keywords": [],
   "author": "",

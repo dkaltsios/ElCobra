@@ -15,10 +15,10 @@ jobs:
         with:
           fetch-depth: 0  
 
-      - name: Set git identity (global)
+      - name: Set git identity (local only)
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Confirm git config
         run: git config --list

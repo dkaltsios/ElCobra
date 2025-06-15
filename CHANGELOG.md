@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [v1.3.2] - 2025-06-15
+
+### Fixed
+- Changed the Railway GitHub Action to install the correct railway dependency.
+
+
 ## [v1.3.1] - 2025-06-15
 
 ### Fixed

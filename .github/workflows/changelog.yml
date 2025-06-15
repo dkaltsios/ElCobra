@@ -3,7 +3,7 @@ name: Update Changelog
 on:
   push:
     tags:
-      - 'v*' 
+      - 'v*'  
 
 jobs:
   changelog:
@@ -13,25 +13,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  
+          fetch-depth: 0
 
       - name: Set git identity (local only)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Confirm git config
+      - name: Confirm git identity
         run: git config --list
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Update changelog only (skip version bump and tagging)
+      - name: Update changelog (skip version bump and tag)
         run: npm run release
 
-      - name: Push changes if any
+      - name: Push changelog update if any
         run: |
           if [ -n "$(git status --porcelain)" ]; then
+            git add CHANGELOG.md package.json
+            git commit -m "docs(changelog): update changelog after release"
             git push
           else
             echo "No changes to push"

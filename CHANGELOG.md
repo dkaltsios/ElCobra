@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [v1.3.1] - 2025-06-15
+
+### Fixed
+- Removed `npm run build` step from GitHub Actions deploy workflow to fix deployment failure on Railway due to missing build script.
+
+
+---
+
 ## [v1.3.0] - 2025-06-15
 
 ### Changed

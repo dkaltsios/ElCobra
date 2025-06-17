@@ -38,6 +38,9 @@ import { evaluateGameState } from './snake/movement/evaluateGameState.js'
 import { filterDeadEndMoves } from './snake/movement/floodFill.js'
 import { simulateMove } from './snake/movement/simulateMove.js'
 
+// Game Modes
+import { avoidHazards } from './snake/modes/royale.js' //For royale mode
+
 /**
  * @function info
  * @description Returns object with information about your Battlesnake. This function is called when you create your Battlesnake on play.battlesnake.com and controls your Battlesnake's appearance.
@@ -125,6 +128,9 @@ function move(gameState) {
 
   //  Filter out dead-end moves
   isMoveSafe = filterDeadEndMoves(gameState, isMoveSafe)
+
+  // Royale mode: avoid entering hazards
+  isMoveSafe = avoidHazards(gameState, isMoveSafe)
 
   // Are there any safe moves left?
   const safeMoves = Object.keys(isMoveSafe).filter((key) => isMoveSafe[key])

@@ -14,6 +14,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [v2.0.0] - 2025-06-17
+
+### Added
+- Added GitHub Actions workflow to automate changelog on tag
+- Implemented a royale game mode
+- Configure Battlesnake to utilize A* algorithm for pathfinding purposes
+- Ensure that both large and small map sizes are supported
+
 ## [v1.3.2] - 2025-06-15
 
 ### Fixed

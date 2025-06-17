@@ -16,6 +16,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
@@ -25,4 +26,5 @@ jobs:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
           npm install -g @railway/cli
-          railway up
+          railway login --token $RAILWAY_TOKEN
+          railway up --service ElCobra

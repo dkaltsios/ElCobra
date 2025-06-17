@@ -7,20 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## 📦 Auto-Generated Changelog
-<!-- changelog -->
+## [v2.0.2] - 2025-06-17
 
-<!-- Everything below this line will remain untouched -->
+## Fixed
+- Removed automated changelog generation files and configurations.
+- Switched to manual changelog process to ensure compliance with Keep a Changelog format and Semantic Versioning.
+
+---
+
+## [v2.0.1] - 2025-06-17
+
+## Fixed
+- Changed the Railway GitHub Action to use the correct key and service name.
+- Changed the CHANGELOG file generator to use the correct key.
 
 ---
 
 ## [v2.0.0] - 2025-06-17
 
-### Added
+## Added
 - Added GitHub Actions workflow to automate changelog on tag
 - Implemented a royale game mode
 - Configure Battlesnake to utilize A* algorithm for pathfinding purposes
 - Ensure that both large and small map sizes are supported
+
+--- 
 
 ## [v1.3.2] - 2025-06-15
 

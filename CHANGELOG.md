@@ -47,7 +47,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - Deploying the application to Railway on pushes to the `main` branch.
 - Implemented a `Hunt Smaller Snakes` logic to improve snake's attacking capabilities using Test Driven Development
 
-
 ---
 
 ## [v1.2.0] - 2025-05-20

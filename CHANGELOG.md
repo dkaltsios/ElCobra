@@ -16,6 +16,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [v1.3.2] - 2025-06-15
 
+### Fixed
+- Changed the Railway GitHub Action to install the correct railway dependency.
+
+## [v1.3.1] - 2025-06-15
+
+### Fixed
+- Removed `npm run build` step from GitHub Actions deploy workflow to fix deployment failure on Railway due to missing build script.
+
+## [v1.3.0] - 2025-06-15
+
 ### Changed
 - Relocated `dependabot.yml` configuration file to `.github/` directory to comply with GitHub's standard structure.
 - Updated Dependabot settings to enable automated **security** and **vulnerability** updates for `npm` and `GitHub Actions`.

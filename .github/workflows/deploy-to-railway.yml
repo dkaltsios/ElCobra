@@ -2,7 +2,7 @@ name: Deploy to Railway
 
 on:
   push:
-    branches: [main]
+    branches: [develop]
 
 jobs:
   deploy:
@@ -27,4 +27,4 @@ jobs:
         run: |
           npm install -g @railway/cli
           railway up --service ElCobra
-      
+

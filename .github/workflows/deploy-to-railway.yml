@@ -2,7 +2,8 @@ name: Deploy to Railway
 
 on:
   push:
-    branches: [main]
+    branches: ["**"] # Deploys on every branch
+    workflow_dispatch:  # Add manual trigger button
 
 jobs:
   deploy:
@@ -26,5 +27,5 @@ jobs:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
           npm install -g @railway/cli
-          railway login --token $RAILWAY_TOKEN
           railway up --service ElCobra
+

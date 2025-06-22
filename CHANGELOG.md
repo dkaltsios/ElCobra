@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
+
+## [v2.0.4] - 2025-06-22
+
+### Fixed
+- Applied security and dependency updates originally proposed by Dependabot:
+  - Manually bumped `eslint-plugin-jest` from `v28.14.0` to `v29.0.1`.
+  - Manually upgraded `jest` from `v29.7.0` to `v30.0.2`.
+- Changes applied through a hotfix branch to avoid direct Dependabot merges into `main`, ensuring alignment with Git Flow practices and preventing divergence between `main` and `develop`.
+- Changed the deploy to railway action to be applied only on push to `main`.
+
 ## [v2.0.3] - 2025-06-22
 
 ### Fixed
@@ -39,7 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Configure Battlesnake to utilize A* algorithm for pathfinding purposes
 - Ensure that both large and small map sizes are supported
 
---- 
+---
 
 ## [v1.3.2] - 2025-06-15
 

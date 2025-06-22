@@ -2,7 +2,8 @@ name: Deploy to Railway
 
 on:
   push:
-    branches: [develop]
+    branches: ["**"] # Deploys on every branch
+    workflow_dispatch:  # Add manual trigger button
 
 jobs:
   deploy:

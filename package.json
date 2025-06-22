@@ -1,5 +1,5 @@
 {
-  "name": "workspace",
+  "name": "ElCobra",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -39,5 +39,8 @@
     "jsdoc": "^4.0.4",
     "prettier": "^3.5.3",
     "standard-version": "^9.5.0"
+  },
+  "overrides": {
+    "brace-expansion": "^2.0.2"
   }
 }

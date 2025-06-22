@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
+## [v2.0.3] - 2025-06-22
+
+### Fixed
+- Updated GitHub Actions deployment workflow:
+  - Removed deprecated `--token` flag from Railway CLI usage.
+  - Replaced it with environment-based authentication using `RAILWAY_TOKEN`, restoring successful CI deployment.
+- Fixed a Dependabot compatibility issue:
+  - Added `overrides` block in `package.json` to force use of `brace-expansion@^2.0.2`, resolving a security vulnerability that Dependabot could not automatically fix.
 
 ## [v2.0.2] - 2025-06-17
 
